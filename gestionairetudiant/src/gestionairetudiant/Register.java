@@ -50,7 +50,7 @@ public class Register extends javax.swing.JFrame {
         Passwd.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(Passwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 410, 310, 40));
 
-        Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionairetudiant/images/RegisterBn.png"))); // NOI18N
+        Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RegisterBn.png"))); // NOI18N
         Register.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Register.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Register.addActionListener(new java.awt.event.ActionListener() {
@@ -58,9 +58,9 @@ public class Register extends javax.swing.JFrame {
                 RegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 470, 190, 60));
+        getContentPane().add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 470, 200, 60));
 
-        Annuler.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionairetudiant/images/annul.png"))); // NOI18N
+        Annuler.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/annul.png"))); // NOI18N
         Annuler.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Annuler.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Annuler.addActionListener(new java.awt.event.ActionListener() {
@@ -68,9 +68,9 @@ public class Register extends javax.swing.JFrame {
                 AnnulerActionPerformed(evt);
             }
         });
-        getContentPane().add(Annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 470, 180, 60));
+        getContentPane().add(Annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 470, 190, 60));
 
-        Bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionairetudiant/images/RegisterBg.png"))); // NOI18N
+        Bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RegisterBg.png"))); // NOI18N
         getContentPane().add(Bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 550));
 
         pack();
