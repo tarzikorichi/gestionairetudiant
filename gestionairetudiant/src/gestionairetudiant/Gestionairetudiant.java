@@ -16,7 +16,8 @@ public class Gestionairetudiant {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("hello hamza");
+        Login log = new Login();
+        log.setVisible(true);
     }
     
 }
