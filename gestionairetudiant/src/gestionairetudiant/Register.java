@@ -38,17 +38,21 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        NomPrenom.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         NomPrenom.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(NomPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 110, 310, 40));
+        getContentPane().add(NomPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 106, 320, 40));
 
+        Depert.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         Depert.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(Depert, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 210, 310, 40));
+        getContentPane().add(Depert, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 205, 320, 40));
 
+        Email.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         Email.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 310, 310, 40));
+        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 305, 320, 40));
 
+        Passwd.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         Passwd.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(Passwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 410, 310, 40));
+        getContentPane().add(Passwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 403, 320, 40));
 
         Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RegisterBn.png"))); // NOI18N
         Register.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -71,7 +75,7 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(Annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 470, 190, 60));
 
         Bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RegisterBg.png"))); // NOI18N
-        getContentPane().add(Bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 550));
+        getContentPane().add(Bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

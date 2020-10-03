@@ -40,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Lgemail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Lgemail.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Lgemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,6 +49,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(Lgemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 310, 50));
 
+        LgPwd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LgPwd.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(LgPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 310, 40));
 
