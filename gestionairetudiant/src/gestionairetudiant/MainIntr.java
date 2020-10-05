@@ -121,7 +121,9 @@ public class MainIntr extends javax.swing.JFrame {
     }//GEN-LAST:event_AjouterUniteActionPerformed
 
     private void AjouterModulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjouterModulActionPerformed
-        
+        dispose();
+        AjouterModules NewModul = new AjouterModules();
+        NewModul.setVisible(true);
     }//GEN-LAST:event_AjouterModulActionPerformed
 
     /**
