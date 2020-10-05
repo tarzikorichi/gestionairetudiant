@@ -59,6 +59,11 @@ public class AjouterUnite extends javax.swing.JFrame {
         getContentPane().add(AddUniBn, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 432, 200, 50));
 
         retournUni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/returUnitBn.png"))); // NOI18N
+        retournUni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retournUniActionPerformed(evt);
+            }
+        });
         getContentPane().add(retournUni, new org.netbeans.lib.awtextra.AbsoluteConstraints(867, 472, 380, 60));
 
         BgAdU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/AddUnity.png"))); // NOI18N
@@ -66,6 +71,12 @@ public class AjouterUnite extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void retournUniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retournUniActionPerformed
+        dispose();
+        MainIntr main = new MainIntr();
+        main.setVisible(true);
+    }//GEN-LAST:event_retournUniActionPerformed
 
     /**
      * @param args the command line arguments

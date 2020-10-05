@@ -81,7 +81,9 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        Login ln = new Login();
+        ln.setVisible(true);
     }//GEN-LAST:event_AnnulerActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed

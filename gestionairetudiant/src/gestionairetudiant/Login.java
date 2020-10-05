@@ -94,18 +94,19 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_LoginBntMouseClicked
 
-     public static Connection cnx=DBConnexion.ConnectDB();
-     PreparedStatement prepared = null;
-     ResultSet rs = null;
+
     private void LoginBntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBntActionPerformed
         String email= Lgemail.getText();
         String Password = LgPwd.getText();
-       
+        MainIntr main = new MainIntr();
+        main.setVisible(true);
+        dispose();
     }//GEN-LAST:event_LoginBntActionPerformed
 
     private void InscrirLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InscrirLabelMouseClicked
         Register Reg = new Register();
         Reg.setVisible(true);
+        dispose();
     }//GEN-LAST:event_InscrirLabelMouseClicked
 
     /**

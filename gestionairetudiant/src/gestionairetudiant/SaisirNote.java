@@ -58,6 +58,11 @@ public class SaisirNote extends javax.swing.JFrame {
 
         Retourbn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RetuaddnoteBn.png"))); // NOI18N
         Retourbn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Retourbn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetourbnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Retourbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1175, 441, 100, 50));
 
         NomEtud.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -86,6 +91,12 @@ public class SaisirNote extends javax.swing.JFrame {
     private void AddNotebnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotebnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddNotebnActionPerformed
+
+    private void RetourbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourbnActionPerformed
+        dispose();
+        MainIntr main = new MainIntr();
+        main.setVisible(true);
+    }//GEN-LAST:event_RetourbnActionPerformed
 
     /**
      * @param args the command line arguments

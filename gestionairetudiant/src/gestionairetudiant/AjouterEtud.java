@@ -88,7 +88,11 @@ public class AjouterEtud extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
-        // TODO add your handling code here:
+        
+        dispose();
+        MainIntr main = new MainIntr();
+        main.setVisible(true);
+        
     }//GEN-LAST:event_RetourActionPerformed
 
     /**
