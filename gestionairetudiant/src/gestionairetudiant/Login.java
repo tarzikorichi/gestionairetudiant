@@ -107,6 +107,7 @@ public class Login extends javax.swing.JFrame {
         for (int i = 0; i < pass.length; i++) {
             Pswd = Pswd + pass[i];
         }
+        // for Msg
         Res = DBConnexion.Login(LNom, Pswd,this);
         if (Res.equals("True")) {
             x++;
