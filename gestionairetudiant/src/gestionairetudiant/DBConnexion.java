@@ -72,7 +72,10 @@ public class DBConnexion {
         return Resultat;
     }
     
-    
+    public static void InsertChef(String nom, String dept, String dept) {
+       String sql = "INSERT INTO depChef (nomEtPrenom, Departement) values ('" + nom + "',"+ dept + "')";
+       
+    }admin
     
     public void closeConnection(){
         try{

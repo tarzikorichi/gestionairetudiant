@@ -87,7 +87,10 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_AnnulerActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        // TODO add your handling code here:
+        String Nom_prenom = NomPrenom.getText();
+        String email = Email.getText();
+        String Pswd = Passwd.getText();
+        String Dept = Depert.getText();
     }//GEN-LAST:event_RegisterActionPerformed
 
     /**
