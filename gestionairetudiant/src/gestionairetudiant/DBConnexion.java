@@ -7,8 +7,14 @@ package gestionairetudiant;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import jdk.nashorn.internal.ir.BreakNode;
 
 /**
  *
@@ -17,15 +23,56 @@ import java.sql.Statement;
 public class DBConnexion {
     Connection con = null;
     Statement stat = null;
+    // ----- Hamza
+    static JOptionPane Mssg =  new JOptionPane();
+    static Connection ConnctDB = null;
+    static PreparedStatement PstLog = null;
+    static ResultSet ResSetLog = null;
+    // -----    
+    final static String dir = System.getProperty("user.dir");
+    public static String url = dir+"\\dbEtudient.db";
     
-    public DBConnexion(){
+    public static Connection DBConnexion(){
+        Connection con = null;
         try{
-            con = DriverManager.getConnection("jdbc:sqlite:dbEtudient.db");
-            System.out.println("connection ok ... ");
+            Class.forName("org.sqlite.JDBC");
+            con = DriverManager.getConnection("jdbc:sqlite:" + url);
+            return con;
         }catch(Exception e){
             System.err.println("Error: "+ e.getMessage());
         }
+        return null;
     }
+    
+    public static String Login(String Nom  , String Paswd, Login L_intr) {
+        ConnctDB = DBConnexion.DBConnexion();
+        String Resultat  = "False";
+        String query = "select * from Admin where nom=? and password=? ";
+        try {
+            PstLog = ConnctDB.prepareStatement(query);
+            PstLog.setString(1, Nom);
+            PstLog.setString(2, Paswd);
+            ResSetLog = PstLog.executeQuery();
+            if (ResSetLog.next()) {
+                String DbNom = ResSetLog.getString("nom");
+                String DbPsw = ResSetLog.getString("password");
+                if ((DbNom.equals(Nom))&&(DbPsw.equals(Paswd))) {
+                    MainIntr Main = new MainIntr();
+                    Main.setVisible(true);
+                    L_intr.dispose();
+                    Resultat = "true";
+                    
+                }
+            } else{
+                
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return Resultat;
+    }
+    
+    
     
     public void closeConnection(){
         try{
@@ -36,6 +83,7 @@ public class DBConnexion {
     }
     
     // select all from table, use where argement where="id = 1"
+
     public String SelectAdmin(String where){
         String res = "";
         try{
@@ -120,7 +168,7 @@ public class DBConnexion {
             return res;
         }
     }
-     public String SelectUnity(String where){
+    public String SelectUnity(String where){
         String res = "";
         try{
             stat = con.createStatement();
@@ -133,6 +181,10 @@ public class DBConnexion {
             System.err.println("Error: "+ e.getMessage());
             return res;
         }
+    }
+     
+    public static void main(String[] args) {
+        DBConnexion.DBConnexion();
     }
 }
 

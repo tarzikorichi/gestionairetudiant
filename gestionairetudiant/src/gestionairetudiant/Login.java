@@ -7,6 +7,8 @@ package gestionairetudiant;
 
 import javax.swing.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Elias
@@ -16,6 +18,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+        
     public Login() {
         initComponents();
     }
@@ -30,7 +33,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         Lgemail = new javax.swing.JTextField();
-        LgPwd = new javax.swing.JTextField();
+        LoginPass = new javax.swing.JPasswordField();
         LoginBnt = new javax.swing.JButton();
         InscrirLabel = new javax.swing.JLabel();
         Bg = new javax.swing.JLabel();
@@ -49,9 +52,10 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(Lgemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 310, 50));
 
-        LgPwd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LgPwd.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(LgPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 310, 40));
+        LoginPass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        LoginPass.setToolTipText("");
+        LoginPass.setBorder(null);
+        getContentPane().add(LoginPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 310, 40));
 
         LoginBnt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionairetudiant/images/ConnectBn.png"))); // NOI18N
         LoginBnt.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -96,11 +100,19 @@ public class Login extends javax.swing.JFrame {
 
 
     private void LoginBntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBntActionPerformed
-        String email= Lgemail.getText();
-        String Password = LgPwd.getText();
-        MainIntr main = new MainIntr();
-        main.setVisible(true);
-        dispose();
+        String LNom = Lgemail.getText(),Res ="";
+        int x=0;
+        char[] pass = LoginPass.getPassword();
+        String Pswd = "";
+        for (int i = 0; i < pass.length; i++) {
+            Pswd = Pswd + pass[i];
+        }
+        Res = DBConnexion.Login(LNom, Pswd,this);
+        if (Res.equals("True")) {
+            x++;
+        } else if ((Res.equals("False"))&&(x<1)) {
+            JOptionPane.showMessageDialog(this, " Mot de Pass ou le nom utilisateur Faux !");
+        }
     }//GEN-LAST:event_LoginBntActionPerformed
 
     private void InscrirLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InscrirLabelMouseClicked
@@ -148,8 +160,8 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bg;
     private javax.swing.JLabel InscrirLabel;
-    private javax.swing.JTextField LgPwd;
     private javax.swing.JTextField Lgemail;
     private javax.swing.JButton LoginBnt;
+    private javax.swing.JPasswordField LoginPass;
     // End of variables declaration//GEN-END:variables
 }
